@@ -12,7 +12,7 @@ BOT_TOKEN = "5704103888:AAGmgdQK_E8UalwkF7N501kCUcuHiN1O7lA"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
-WEBHOOK_HOST = f'https://mighty-woodland-33435..herokuapp.com'
+WEBHOOK_HOST = f'https://mighty-woodland-33435.herokuapp.com'
 WEBHOOK_PATH = f'/webhook/5704103888:AAGmgdQK_E8UalwkF7N501kCUcuHiN1O7lA'
 WEBHOOK_URL = f'{WEBHOOK_HOST}{WEBHOOK_PATH}'
 
