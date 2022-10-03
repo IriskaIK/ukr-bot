@@ -3,7 +3,7 @@ from random import *
 from aiogram import types
 from main import bot
 from googletrans import Translator
-banned_symbols = set('ыъ',)
+banned_symbols = set('ыъё',)
 list_of_messages = ['Ти чо сука? на мові балакай підріла. Ще раз побачу таке, дупу порву', 'Ще раз таке напишеш, кікну звідси', 'Вийшов звідси розбійник', 'Sticker']
 async def checkruzzianChar(message:types.Message):
     t = Translator().detect(text = str(message.text))
