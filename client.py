@@ -8,6 +8,9 @@ list_of_messages = ['Ти чо сука? на мові балакай підрі
 async def checkruzzianChar(message:types.Message):
     t = Translator().detect(text = str(message.text))
     if (t.lang == 'ru'):
+        print(t.lang)
+        print(t.confidence)
+
         index = t.lang.index('ru')
         if (t.confidence[index] >= 0.9):
             text = choice(list_of_messages)
