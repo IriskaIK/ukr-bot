@@ -12,13 +12,20 @@ async def checkruzzianChar(message:types.Message):
         print(t.confidence)
 
         index = t.lang.index('ru')
-        if (t.confidence[index] >= 0.9):
-            text = choice(list_of_messages)
-            if text == 'Sticker':
-                await bot.send_sticker(message.chat.id, sticker='CAACAgIAAxkBAAEF83hjNUoP6hxP_zwlAqdxahqOjdsnFgACfSQAAgrA-EiyDkpnFi2uqioE' )
-            else:
-                await message.reply(text=text)
-
+        if isinstance(t.confidence, list):
+            if (t.confidence[index] >= 0.9):
+                text = choice(list_of_messages)
+                if text == 'Sticker':
+                    await bot.send_sticker(message.chat.id, sticker='CAACAgIAAxkBAAEF83hjNUoP6hxP_zwlAqdxahqOjdsnFgACfSQAAgrA-EiyDkpnFi2uqioE' )
+                else:
+                    await message.reply(text=text)
+        else:
+            if(t.confidence >= 0.9):
+                text = choice(list_of_messages)
+                if text == 'Sticker':
+                    await bot.send_sticker(message.chat.id, sticker='CAACAgIAAxkBAAEF83hjNUoP6hxP_zwlAqdxahqOjdsnFgACfSQAAgrA-EiyDkpnFi2uqioE' )
+                else:
+                    await message.reply(text=text)
     else:
         print(t.lang)
 
